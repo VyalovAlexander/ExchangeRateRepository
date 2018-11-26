@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
         libmcrypt-dev \
         #libpng12-dev \
         libpq-dev \
-    && docker-php-ext-install -j$(nproc) iconv mcrypt mbstring mysqli pdo_mysql pdo pdo_pgsql zip\
+    && docker-php-ext-install -j$(nproc) iconv mbstring mysqli pdo_mysql pdo pdo_pgsql zip\
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
     && docker-php-ext-install -j$(nproc) gd
@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
 # Куда же без composer'а.
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN pecl install xdebug-2.5.0 \
+RUN pecl install xdebug-2.6.0 \
    && docker-php-ext-enable xdebug
 
 RUN echo xdebug.remote_enable=1 >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \

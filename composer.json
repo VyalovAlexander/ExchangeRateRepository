@@ -1,0 +1,19 @@
+{
+    "name": "vyalov/exchange_rate",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Vyalov Alexander",
+            "email": "vyalov.alexander@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^2.5",
+        "predis/predis": "^1.1"
+    },
+    "autoload": {
+        "psr-4" : {
+            "VyalovAlexander\\ExchangeRate\\" : "src"
+        }
+    }
+}
